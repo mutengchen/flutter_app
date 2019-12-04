@@ -1,13 +1,16 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/crop.dart';
 import 'package:flutter_app/main/homepage.dart';
+import 'package:flutter_app/main/mainpage.dart';
 import 'package:flutter_app/splash/splash.dart';
-
+import 'package:permission_handler/permission_handler.dart';
 import 'listView.dart';
 void main(){
-runApp(MyApp());
+runApp(MainPageWidget());
 if(Platform.isAndroid){
   var style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   SystemChrome.setSystemUIOverlayStyle(style);
@@ -30,6 +33,7 @@ class MyApp extends StatefulWidget{
  
 }
  class _MyAppState extends State<MyApp>{
+   
     int _selectIndex = 0;
    final itemNames = [
     _Item('首页', 'assets/images/ic_tab_home_active.png',
@@ -43,6 +47,8 @@ class MyApp extends StatefulWidget{
     _Item('我的', 'assets/images/ic_tab_profile_active.png',
         'assets/images/ic_tab_profile_normal.png')
   ];
+
+
  void initBottomNavBar(){
     //初始化底部栏的
        if(itemList == null){

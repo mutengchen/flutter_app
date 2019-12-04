@@ -3,6 +3,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_app/bean/subject_bean.dart';
 import 'package:flutter_app/common/const.dart';
 import 'package:flutter_app/home/home_app_bar.dart' as myapp;
+import 'package:flutter_app/main/book_video.dart';
+import 'package:flutter_app/main/group_page.dart';
+import 'package:flutter_app/main/person_center.dart';
+import 'package:flutter_app/main/shop_page.dart';
 import 'package:flutter_app/widgets/image/radius_img.dart';
 import 'package:flutter_app/widgets/search_text_field_widget.dart';
 
@@ -85,7 +89,24 @@ class HomePage extends StatefulWidget{
     return null;
   }
 
+  
 }
+class _HomePageState extends State<HomePage>{
+  List<Widget> pages;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  
+  }
+
+} 
+
 class SliverContainer extends StatefulWidget {
   final String name;
 
