@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/main/book_video.dart';
 import 'package:flutter_app/main/group_page.dart';
+import 'package:flutter_app/main/homepage.dart';
 import 'package:flutter_app/main/person_center.dart';
 import 'package:flutter_app/main/shop_page.dart';
 class MainPageWidget extends StatefulWidget{
@@ -33,7 +34,6 @@ Widget build(BuildContext context) {
   return  MaterialApp(
     
     home: Scaffold(
-      appBar: AppBar(title: Text("Demo"),),
       body: new Stack(
         children: [
           _getPagesWidget(0),
@@ -81,7 +81,7 @@ Widget build(BuildContext context) {
           GroupPageWidget(),
           PersonCenterWidget(),
           ShopPageWidget(),
-          BookVideoWidget()
+          HomePage()
         ];
     }
     }

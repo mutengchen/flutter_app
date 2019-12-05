@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/api/mock_request.dart';
 import 'package:flutter_app/bean/subject_bean.dart';
 import 'package:flutter_app/common/const.dart';
 import 'package:flutter_app/home/home_app_bar.dart' as myapp;
@@ -13,7 +16,7 @@ import 'package:flutter_app/widgets/search_text_field_widget.dart';
 import '../router.dart';
 //首页，tab页面，显示动态和推荐tab
  var _tabs = ['动态','推荐','AR',"VR"];
-class HomePage extends StatefulWidget{
+class HomePage extends StatelessWidget{
  
   
   @override
@@ -36,11 +39,6 @@ class HomePage extends StatefulWidget{
               
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               child: myapp.SliverAppBar(
-                //appbar上滑的时候是否显示
-                // pinned: true,
-                // floating: true,
-                // snap: true,
-                
                 pinned: true,
                 //扩展高度R
                 expandedHeight: 120.0,
@@ -82,30 +80,8 @@ class HomePage extends StatefulWidget{
       ),
     );
   }
-
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return null;
-  }
-
-  
 }
-class _HomePageState extends State<HomePage>{
-  List<Widget> pages;
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
-  }
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  
-  }
 
-} 
 
 class SliverContainer extends StatefulWidget {
   final String name;
@@ -136,15 +112,10 @@ class _SliverContainerState extends State<SliverContainer> {
   List<Subject> list;
 
   void requestAPI() async {
-//    var _request = HttpRequest(API.BASE_URL);
-//    int start = math.Random().nextInt(220);
-//    final Map result = await _request.get(API.TOP_250 + '?start=$start&count=30');
-//    var resultList = result['subjects'];
-
-    // var _request = MockRequest();
-    // var result = await _request.get(API.TOP_250);
-    // var resultList = result['subjects'];
-    // list = resultList.map<Subject>((item) => Subject.fromMap(item)).toList();
+     var _request = MockRequest();
+    var result = await _request.get(Constant.TOP_250);
+    var resultList = result['subjects'];
+    list = resultList.map<Subject>((item) => Subject.fromMap(item)).toList();
     setState(() {});
   }
 

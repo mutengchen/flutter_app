@@ -1,7 +1,11 @@
 class Constant{
   static const IMAGE_ASSET = 'assets/images/';
   static const String TOP_250 = '/v2/movie/top250';
-
+  static const IN_THEATERS = "";
+  static const COMING_SOON = "";
+  static const WEEKLY = "";
+  static const REIVIEWS = "";
+  
   static const String IMG_TMP1 =
       'https://upload-images.jianshu.io/upload_images/3884536-b21bfc556ffcc062.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240';
 
